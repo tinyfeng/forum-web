@@ -58,6 +58,11 @@ p {
   line-height: 1.7em;
 }
 
+/* home */
+.signup {
+  text-align: right;
+    float: right;
+}
 
 /* header */
 
@@ -65,7 +70,7 @@ p {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
-  color: white;
+  color: dodgerblue;
   text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 9px;
@@ -73,8 +78,16 @@ p {
   &:hover {
     color: white;
     text-decoration: none;
-  }
+  }  
 }
+
+.color a {
+  color: aqua!important;
+}
+.colorblur a{
+  color: blue;
+}
+
 
 /* footer */
 
@@ -240,6 +253,15 @@ input {
   }
 }
 
+/* home */
+
+.signup {
+  position: fixed;
+  right: 0;
+  width: 200px;
+  background-color: white;
+}
+
 /* microposts */
 
 .microposts {
@@ -285,4 +307,9 @@ span.picture {
   input {
     border: 0;
   }
+}
+
+/* post */
+.posttext {
+  height: 120px;
 }

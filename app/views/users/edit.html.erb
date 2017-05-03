@@ -1,0 +1,23 @@
+<% provide(:title, current_user.name) %>
+<h1>资料编辑</h1>
+<div class="row">
+<div class="col-md-4 col-md-offset-4">
+<%= form_for @user do |f| %>
+
+<%= f.label "用户名" %>
+<%= f.text_field :name, class: "form-control" %>
+
+<%= f.label "邮箱" %>
+<%= f.email_field :email, class: "form-control" %>
+
+<%= f.label "密码" %>
+<%= f.password_field :password, class: "form-control" %>
+
+<%= f.label "确认密码" %>
+<%= f.password_field :password_confirmation, class: "form-control" %>
+
+<%= f.submit "修改" , class: "btn btn-primary" %>
+<% end %>
+
+</div>
+</div>
