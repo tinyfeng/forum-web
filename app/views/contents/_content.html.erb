@@ -1,0 +1,11 @@
+<li id="content-<%= content.id %>">
+  
+  <span class="content"><%= "#{content.ct}"%></span>
+  <span class="timestamp">
+    回复于 <%= "#{Time.at content.created_at.to_i}".split("+")[0] %>
+    &nbsp<%= "#{content.floor}楼"%>&nbsp &nbsp 
+    <div style="color: black;display: inline-block;" >
+    --<%= content.user.name %>
+    </div>
+  </span>
+</li>

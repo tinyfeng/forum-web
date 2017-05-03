@@ -1,0 +1,13 @@
+<li id="post-<%= post.id %>">
+  <span class="content"><%= link_to  post, id: "subject" do%>
+  主题：<%= "#{post.subject}" %>  &nbsp &nbsp &nbsp      楼主：<%= "#{post.user.name }" %> <% end %></span>
+
+  
+  <span class="content"><%= link_to "#{post.contents.first.ct}",post %></span>
+  <span class="timestamp">
+    在<%= "#{Time.at post.updated_at.to_i}".split("+")[0] %>时回复  
+    <div style="color: black; display: inline-block;">
+    已有<%= "#{post.content_count}" %>条回复
+    </div>
+  </span>
+</li>
