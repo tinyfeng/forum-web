@@ -1,43 +1,37 @@
 class SessionsController < ApplicationController
   def new
-    if params[:f] == nil
-      redirect_to "http://sso.tiny.com/login?url=#{store_location}"
-    else
-      authen_url?(params)
-    end
+    
   end
 
-  # def create
-  # 	if @user = User.find_by(email: params[:session][:email].downcase)
-  # 		if BCrypt::Password.new(@user.password_digest) == params[:session][:password]
-  # 			redirect_to @user
-  # 			flash[:success] = "登录成功"	
-  # 			log_in @user
+  def create
+  	if @user = User.find_by(email: params[:session][:email].downcase)
+  		if BCrypt::Password.new(@user.password_digest) == params[:session][:password]
+  			redirect_to @user
+  			flash[:success] = "登录成功"	
+  			log_in @user
         
-  # 		else
-  # 			flash[:danger] = "密码错误"
-  # 			render 'new'
+  		else
+  			flash[:danger] = "密码错误"
+  			render 'new'
   			
-  # 		end
+  		end
   	
-  # 	else
-  # 	 	flash[:danger] = "无效的邮箱"
-  # 	 	render 'new'
+  	else
+  	 	flash[:danger] = "无效的邮箱"
+  	 	render 'new'
   		
-  # 	end
-  # end
+  	end
+  end
 
   def destroy
-    user = current_user
-    user.online = false if user.present?
-    user.save
+    
     # if s_id = SessionId.find_by(s_id: session[:id])
     #   s_id.online = false
     #   s_id.save
     # end
   	session[:user_id] = nil
 
-    redirect_to root_url
+    #redirect_to root_url
   end
 
 
