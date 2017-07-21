@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   post 'post_create', to: 'posts#create'
 
-  get '/signup',to: 'users#new'
+  get '/signup', to: 'users#new'
 
   post 'content_create', to: 'contents#create'
 
