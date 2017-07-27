@@ -16,13 +16,22 @@ class UsersController < ApplicationController
 
   def create
   	@user = User.new(user_params) 
+    if User.all.each.map{|f| f.name}.include?(@user.name)
+      flash[:danger] = "用户名已存在"
+      render 'new'       
+      return
+    end
+    if User.all.each.map{|f| f.email}.include?(@user.email.downcase)
+      flash[:danger] = "邮箱已存在"
+      render 'new'      
+      return  
+    end   
   	if @user.save 
       log_in @user
   		render 'show'
   	else
-
-  		render 'new'
-      flash[:danger] = "error messages."
+      flash[:danger] = "error"
+  		render 'new'      
   	end
   end
 
