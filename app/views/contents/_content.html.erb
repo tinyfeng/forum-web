@@ -6,6 +6,9 @@
     &nbsp<%= "#{content.floor}楼"%>&nbsp &nbsp 
     <div style="color: black;display: inline-block;" >
     --<%= content.user.name %>
-    </div>
+    </div>&nbsp &nbsp
+    <% if admin_user?(current_user) %>
+       <%= link_to "删除", content, method: :delete  %>
+    <% end %> 
   </span>
 </li>

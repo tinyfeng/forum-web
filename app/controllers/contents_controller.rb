@@ -1,7 +1,8 @@
 class ContentsController < ApplicationController
+	before_action :set_model, only: [:destroy]
 
 	def create
-		@content = current_post.contents.build(ct: params[:content][:ct])
+		@content = current_post.contents.build(content_params)
 		@content.user_id = current_user.id
 		if  @content.valid?
 			@content.post.content_count += 1
@@ -15,6 +16,23 @@ class ContentsController < ApplicationController
 			redirect_to current_post
 		end
 	end
+
+	def destroy
+		@content.destroy
+		post = @content.post
+		post.content_count -= 1
+		post.save
+		redirect_to @content.post
+	end
+
+	private
+		def content_params
+			params.require(:content).permit(:ct)
+		end
+
+		def set_model
+			@content = Content.find(params[:id])
+		end
 end
 
 

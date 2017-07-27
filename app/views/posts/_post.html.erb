@@ -7,7 +7,10 @@
   <span class="timestamp">
     在<%= "#{Time.at post.updated_at.to_i}".split("+")[0] %>时回复  
     <div style="color: black; display: inline-block;">
-    已有<%= "#{post.content_count}" %>条回复
-    </div>
-  </span>
+      已有<%= "#{post.content_count}" %>条回复
+    </div> &nbsp &nbsp
+    <% if admin_user?(current_user) %>
+       <%= link_to "删除", post, method: :delete  %>
+    <% end %>    
+  </span>  
 </li>
