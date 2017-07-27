@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170428082436) do
+ActiveRecord::Schema.define(version: 20170727093017) do
 
   create_table "contents", force: :cascade do |t|
     t.text     "ct"
@@ -84,6 +84,7 @@ ActiveRecord::Schema.define(version: 20170428082436) do
     t.datetime "activated_at"
     t.string   "reset_digest"
     t.datetime "reset_sent_at"
+    t.datetime "last_reply"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
