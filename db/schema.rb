@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170727093017) do
+ActiveRecord::Schema.define(version: 20170731115346) do
 
   create_table "contents", force: :cascade do |t|
     t.text     "ct"
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 20170727093017) do
     t.time     "reply_time"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.boolean  "top"
     t.index ["user_id", "updated_at"], name: "index_posts_on_user_id_and_updated_at"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
