@@ -1,15 +1,14 @@
-<header class="navbar navbar-fixed-top navbar-inverse ">
+<header class="navbar navbar-fixed-top navbar-inverse">
   <div class="container">
     <%= link_to "Tiny 论坛", root_path, id: "logo" %>
     <nav>
-      <ul class="nav navbar-nav navbar-right color header">
-        <li><%= link_to "首页", root_path %></li>
-        <li><%= link_to "帮助", "#" %></li>
+      <ul class="nav navbar-nav navbar-right color display: inline-block" style="font-size: 12px">
+        <li style="float: left;"><%= link_to "首页", root_path %></li>
         <% if logged_in? %>
-        <li><%= link_to "我的账户", current_user  %></li>
-        <li><%= link_to "退出", logout_path, method: :delete %></li>
+        <li style="float: left;"><%= link_to "我的账户", current_user  %></li>
+        <li style="float: left;"><%= link_to "退出", logout_path, method: :delete %></li>
         <% else %>
-        <li><%= link_to "登录", login_path %></li>
+        <li style="float: left;"><%= link_to "登录", login_path %></li>
         <% end %>
         
       </ul>
