@@ -2,7 +2,7 @@
   <div class="container">
     <%= link_to "Tiny 论坛", root_path, id: "logo" %>
     <nav>
-      <ul class="nav navbar-nav navbar-right color display: inline-block" >
+      <ul class="nav navbar-nav navbar-right color display: inline-block" style="font-size: 12px">
         <li style="float: left;"><%= link_to "首页", root_path %></li>
         <% if logged_in? %>
         <li style="float: left;"><%= link_to "我的账户", current_user  %></li>
