@@ -1,10 +1,5 @@
 <% provide(:title,"Home") %>
 <div class="row">
-<div class="signup">
-<% unless logged_in? %>
-  <%= link_to "注册", signup_path %>
-<% end %>
-</div>
 <div class="col-md-8">
     <% if @posts.any? %>
       <h3> </h3>

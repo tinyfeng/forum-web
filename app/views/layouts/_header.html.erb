@@ -1,6 +1,10 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
-  <div class="container">
-    <%= link_to "Tiny 论坛", root_path, id: "logo" %>
+  <div class="container" style="background: #222">
+  <meta charset="utf-8"> 
+  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   <!--  <%= link_to "Tiny 论坛", root_path, id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right color display: inline-block" style="font-size: 13px; margin: -20px -17px; padding-top:  25px">
         <li style="float: left;"><%= link_to "首页", root_path %></li>
@@ -11,7 +15,70 @@
         <li style="float: left;"><%= link_to "登录", login_path %></li>
         <% end %>
         
+        
       </ul>
     </nav>
+ -->
+ <nav class="navbar navbar-default" role="navigation" style="border: none ">
+    <div class="container-fluid" style="background: #222">
+    <div class="navbar-header" style="background: #222">
+        <button type="button" class="navbar-toggle" data-toggle="collapse"
+                data-target="#example-navbar-collapse" style="bottom: -10px; background-color: cadetblue;">
+            <span class="sr-only">切换导航</span>
+            <span class="icon-bar" style="background: #fff"></span>
+            <span class="icon-bar" style="background: #fff"></span>
+            <span class="icon-bar" style="background: #fff"></span>
+        </button>
+        <div class="navbar-brand" style="background: #222">
+        <%= link_to "Tiny 论坛", root_path, id: "logo" %></div>
+    </div>
+    <div class="collapse navbar-collapse" style="background: #222" id="example-navbar-collapse">
+        <ul class="nav navbar-nav navbar-right" style="background: #222; margin-top: 10px; margin-bottom: -10px;">          
+            <li ><%= link_to "首页", root_path %></li>
+            <% if logged_in? %>
+            <li><%= link_to "我的账户", current_user  %></li>
+            <li><%= link_to "退出", logout_path, method: :delete %></li>
+            <% else %>
+            <li><%= link_to "登录", login_path %></li>
+            <% end %>            
+        </ul>
+    </div>
+</nav>
+    
+        <!-- <button type="button" class="navbar-toggle" data-toggle="collapse"
+                data-target="#example-navbar-collapse">
+            <span class="sr-only">切换导航</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <div class="navbar-brand" style="padding: 7px;">
+        <%= link_to "Tiny 论坛", root_path, id: "logo" %></div>
+    </div>
+    <div class="collapse navbar-collapse" id="example-navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">          
+            <li ><%= link_to "首页", root_path %></li>
+            <% if logged_in? %>
+            <li><%= link_to "我的账户", current_user  %></li>
+            <li><%= link_to "退出", logout_path, method: :delete %></li>
+            <% else %>
+            <li><%= link_to "登录", login_path %></li>
+            <% end %>            
+        </ul>
+ -->
+   <!--  <%= link_to "Tiny 论坛", root_path, id: "logo" %>
+    <nav>
+      <ul class="nav navbar-nav navbar-right color display: inline-block" style="font-size: 13px; margin: -20px -17px; padding-top:  25px">
+        <li style="float: left;"><%= link_to "首页", root_path %></li>
+        <% if logged_in? %>
+        <li style="float: left;"><%= link_to "我的账户", current_user  %></li>
+        <li style="float: left;"><%= link_to "退出", logout_path, method: :delete %></li>
+        <% else %>
+        <li style="float: left;"><%= link_to "登录", login_path %></li>
+        <% end %>
+        
+        
+      </ul>
+    </nav> -->
   </div>
 </header>
