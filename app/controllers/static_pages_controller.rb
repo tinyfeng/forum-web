@@ -6,4 +6,7 @@ class StaticPagesController < ApplicationController
       f if f.top } - [nil]
   	@posts = (topposts | Post.all).paginate(page: params[:page])
   end
+
+  def about
+  end
 end
