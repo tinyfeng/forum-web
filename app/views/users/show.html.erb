@@ -2,16 +2,19 @@
 <div class="row">
   <aside class="col-md-4">
     <section class="user_info">
-    <div >
-		<%= link_to "修改资料", edit_user_path(@user) %>
-	</div>
-      <h1>        
-        <%= "name:  #{@user.name}" %>
+
+      <h1>
+        <span style="color: gray;display: inline-block; width: 90px; text-align-last: justify;">用户名：</span>     
+        <span style="display: inline-block;"><%= "#{@user.name}" %></span>
       </h1>
-      <h1>        
-        <%= "email:  #{@user.email}" %>
+      <h1>
+        <span style="color: gray;display: inline-block;width: 90px; text-align-last: justify;">邮&nbsp&nbsp&nbsp箱：</span>     
+        <span style="display: inline-block;"><%= "#{@user.email}" %></span>
       </h1>
     </section>
+    <button type="button" class="btn btn-primary" style="background: steelblue; margin: 4px 0px;">
+      <%= link_to "修改资料", edit_user_path(@user), style: "color: #fff; " %>
+    </button>
   </aside>
 
   <div class="col-md-8">
