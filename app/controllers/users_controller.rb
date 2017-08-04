@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :correct_user, only: [:edit, :update]
+  before_action :correct_user, only: [:edit, :update, :show]
   def show
     if User.all.ids.include?(params[:id].to_i)
       @user = User.find(params[:id])
