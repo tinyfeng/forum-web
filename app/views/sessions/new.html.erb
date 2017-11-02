@@ -8,11 +8,11 @@
 	<%= f.email_field :email, class: "form-control" %>
 
 	<%= f.label "密码" %>
-	<%= f.password_field :password, class: "form-control"  %>
+	<%= f.password_field :password, class: "form-control",style: "margin-bottom: 10px"  %>
 	<span>
-	<%= link_to "还没有账户？快去注册", signup_path %>
+	<%= link_to "还没有账户？快去注册", signup_path, class: "a-light"%>
 	</span>
-	<%= f.submit "登录",class: "btn btn-primary" %>
+  <%= f.submit "登录",class: "btn btn-primary btn-light", style: "margin-top: 30px;"%>
 
 	<% end %>
 	</div>

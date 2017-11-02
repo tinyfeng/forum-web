@@ -13,3 +13,34 @@
  *= require_tree .
  *= require_self
  */
+.btn-light{
+    margin-bottom: 21px!important;
+    background: snow!important;
+    border-radius: 8px!important;
+    border: lightblue 3px solid!important;
+    color: #757575!important;
+    width: 140px;
+    left: 50%;
+    position: absolute;
+    margin-left: -70px;
+
+}
+.form-control {
+  border: lightblue 2px solid!important;
+  border-radius: 8px!important;
+}
+label {
+  color: #B8B8B8;
+  font-family: MicrosoftYaHei;
+}
+h1 {
+  font-family: PingFangSC-Regular!important;
+  color: #757575!important;
+}
+.a-light {
+  font-family: PingFangSC-Regular;
+  color: #BDBDBD;
+}
+.a-text {
+  color: #006666!important;
+}
