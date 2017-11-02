@@ -1,6 +1,7 @@
 class StaticPagesController < ApplicationController
   require 'will_paginate/array'
   def home
+    Count.add
     topposts = []
     topposts = Post.all.map{ |f|
       f if f.top } - [nil]
