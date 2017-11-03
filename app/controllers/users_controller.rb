@@ -27,12 +27,23 @@ class UsersController < ApplicationController
       return  
     end   
   	if @user.save 
-      log_in @user
-  		render 'show'
+      flash[:danger] = "已经向你的邮箱发送了邮件，快去激活吧"
+      @user.activate
+      redirect_to login_url
   	else
       flash[:danger] = "error"
   		render 'new'      
   	end
+  end
+
+  def activate
+    user = User.find(params[:uid])
+    if BCrypt::Password.new(params[:token]) == "#{params[:uid]}987654"
+      flash[:success] = "激活成功，请登陆"
+      user.activation = true
+      user.save
+    end
+    redirect_to  login_url
   end
 
   def edit

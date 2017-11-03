@@ -1,0 +1,10 @@
+<h1>账户激活</h1>
+
+<p>
+  恭喜你注册成功，下面点击此链接激活账号：
+</p>
+
+<% token = BCrypt::Password.create("#{@user.id}987654") %>
+<p style="font-size: 15px;">
+  <%= "http://localhost:2000/auth_activate?token=#{token}&uid=#{@user.id}" %>
+</p>
