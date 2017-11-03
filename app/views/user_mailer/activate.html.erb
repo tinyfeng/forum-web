@@ -6,5 +6,5 @@
 
 <% token = BCrypt::Password.create("#{@user.id}987654") %>
 <p style="font-size: 15px;">
-  <%= "http://localhost:2000/auth_activate?token=#{token}&uid=#{@user.id}" %>
+  <%= "http://tinyfeng.com/auth_activate?token=#{token}&uid=#{@user.id}" %>
 </p>
