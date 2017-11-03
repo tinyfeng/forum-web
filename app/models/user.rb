@@ -11,7 +11,7 @@ class User < ApplicationRecord
 	has_many :contents, dependent: :destroy
 
   def activated?
-    self.activation
+    self.activation == true
   end
 
 	def self.new_token
