@@ -1,10 +1,14 @@
 <h1>账户激活</h1>
 
 <p>
-  恭喜你注册成功，下面点击此链接激活账号：
+  恭喜你注册账户成功，下面点击此链接激活账号：
 </p>
 
 <% token = BCrypt::Password.create("#{@user.id}987654") %>
 <p style="font-size: 15px;">
   <%= "http://tinyfeng.com/auth_activate?token=#{token}&uid=#{@user.id}" %>
+</p>
+
+<p style="font-size: 15px;">
+  要是链接点击失败，请把上述地址复制粘贴到浏览器。
 </p>
