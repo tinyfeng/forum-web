@@ -10,6 +10,9 @@ class User < ApplicationRecord
 	has_many :posts, dependent: :destroy
 	has_many :contents, dependent: :destroy
 
+  def activated?
+    self.activation
+  end
 
 	def self.new_token
 	end
@@ -21,6 +24,10 @@ class User < ApplicationRecord
 	def self.digest(token)
 		BCrypt::Password.create(token)
 	end
+
+  def activate
+    UserMailer.activate(self).deliver_now!
+  end
 
 
 end

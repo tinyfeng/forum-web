@@ -6,14 +6,18 @@ class SessionsController < ApplicationController
   def create
   	if @user = User.find_by(email: params[:session][:email].downcase)
   		if BCrypt::Password.new(@user.password_digest) == params[:session][:password]
-  			redirect_to @user
-  			flash[:success] = "登录成功"	
-  			log_in @user
-        
+        if @user.activated?
+  			  redirect_to @user
+  			  flash[:success] = "登录成功"	
+  			  log_in @user
+        else
+          flash[:danger] = "账号尚未激活,已向你的邮箱发送邮件，请前去邮箱激活,并重新登陆"
+          render 'new'
+          @user.activate
+        end
   		else
   			flash[:danger] = "密码错误"
   			render 'new'
-  			
   		end
   	
   	else
