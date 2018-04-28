@@ -30,7 +30,7 @@ Rails.application.configure do
     :address        => 'smtp.qq.com',
     :port           => '587',
     :authentication => :plain,
-    :user_name      => '8849326@qq.com',
+    :user_name      => 'xxxx@qq.com',
     :password       => 'wkghomzowhtxcbeg',
   }
   # Don't care if the mailer can't send.
